@@ -10,7 +10,7 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&amp;display=swap">
-<script src="kf-icons.js?v=3"></script>
+<script src="kf-icons.js?v=4"></script>
 <title>Kebab Factory · Dürüms, pizza &amp; burgers in Badalona</title>
 <meta name="description" content="Order dürüms, pizza, burgers and fried tacos straight from Kebab Factory in Badalona. Delivered in about 45 minutes, pay cash or card at the door.">
 <style>
@@ -44,18 +44,20 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
 .kf-chip-fade{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 56px),transparent 100%);mask-image:linear-gradient(to right,#000 calc(100% - 56px),transparent 100%)}
 .kf-cat-chips{display:flex;gap:10px;overflow-x:auto;flex-wrap:nowrap}
 @media (min-width:768px){.kf-cat-chips{flex-wrap:wrap;overflow-x:visible}.kf-cat-chips.kf-chip-fade{-webkit-mask-image:none;mask-image:none}}
-.kf-journey{position:relative;max-width:1000px;margin:0 auto}
-.kf-journey-road{position:relative;width:100%;aspect-ratio:1000/900;border-radius:32px;background:radial-gradient(ellipse 75% 45% at 50% 4%,rgba(255,217,190,.55),transparent 62%),radial-gradient(ellipse 75% 45% at 50% 96%,rgba(198,255,61,.22),transparent 62%),radial-gradient(ellipse 60% 30% at 12% 50%,rgba(255,217,190,.35),transparent 65%),radial-gradient(ellipse 60% 30% at 88% 50%,rgba(198,255,61,.16),transparent 65%)}
+.kf-journey{position:relative;max-width:640px;margin:0 auto}
+.kf-journey-road{position:relative;width:100%;border-radius:32px;padding:40px 0;background:radial-gradient(ellipse 75% 45% at 50% 4%,rgba(255,217,190,.55),transparent 62%),radial-gradient(ellipse 75% 45% at 50% 96%,rgba(198,255,61,.22),transparent 62%),radial-gradient(ellipse 60% 30% at 12% 50%,rgba(255,217,190,.35),transparent 65%),radial-gradient(ellipse 60% 30% at 88% 50%,rgba(198,255,61,.16),transparent 65%)}
 .kf-journey-road svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .kf-rider-wrap{position:absolute;transform:translate(-50%,-50%);z-index:6;left:50%;top:0%}
 .kf-rider{width:clamp(42px,6vw,56px);height:clamp(42px,6vw,56px);border-radius:50%;background:#FF4D1C;color:#fff;display:grid;place-items:center;box-shadow:0 16px 30px -10px rgba(0,0,0,.5);border:4px solid #FFF8F2;animation:kfriderbob 1.6s ease-in-out infinite}
 @keyframes kfriderbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.kf-scene-pin{position:absolute;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 16px -6px rgba(44,29,18,.5);border:4px solid #FFF8F2;z-index:3}
-.kf-amb{position:absolute;transform:translate(-50%,-50%);width:28px;height:28px;border-radius:50%;background:#fff;display:grid;place-items:center;color:#E63E00;opacity:.6;box-shadow:0 8px 16px -8px rgba(80,40,10,.3);z-index:1}
-.kf-scene{position:absolute;transform:translateY(-50%);width:min(195px,16%);z-index:2}
-.kf-scene.kf-side-l{right:83%}
-.kf-scene.kf-side-r{left:83%}
-.kf-scene.kf-side-c{left:50%;width:min(230px,56%);transform:translate(-50%,calc(-100% - 34px))}
+.kf-journey-stops{position:relative;z-index:2;display:flex;flex-direction:column;gap:44px}
+.kf-scene-row{position:relative;display:flex}
+.kf-scene-row.kf-side-l{justify-content:flex-start}
+.kf-scene-row.kf-side-r{justify-content:flex-end}
+.kf-scene-row.kf-side-c{justify-content:center}
+.kf-scene-pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 16px -6px rgba(44,29,18,.5);border:4px solid #FFF8F2;z-index:3}
+.kf-scene{width:min(240px,46%)}
+.kf-scene-row.kf-side-c .kf-scene{width:min(280px,68%)}
 .kf-scene-card{background:#fff;border:1px solid #FCE0CC;border-radius:14px;overflow:hidden;box-shadow:0 10px 22px -12px rgba(80,40,10,.28);text-align:center}
 .kf-scene-card-img{width:100%;aspect-ratio:16/10;background-size:cover;background-position:center}
 .kf-scene-card-body{padding:10px 14px 12px}
@@ -64,14 +66,9 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
 .kf-scene-card p{font-size:13px;line-height:1.45;color:#8A7160;margin:0}
 @media (max-width:640px){
   .kf-journey{padding-bottom:40px}
-  .kf-journey-road{aspect-ratio:1000/1500}
-  .kf-journey-road svg{overflow:visible}
-  .kf-scene.kf-side-l,.kf-scene.kf-side-r{left:50%;right:auto;width:min(230px,88%);transform:translate(-50%,24px)}
-  .kf-scene.kf-side-c{left:50%;width:min(230px,88%);transform:translate(-50%,calc(-100% - 24px))}
   .kf-scene-card-body{padding:9px 12px 10px}
   .kf-scene-card h3{font-size:16px}
   .kf-scene-card p{display:none}
-  .kf-amb{display:none}
 }
 @media (prefers-reduced-motion:reduce){.kf-rider{animation:none}}
 .kf-journey-h{display:none}
@@ -127,7 +124,7 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
 .kf-opensign-board span{display:block;font-size:11.5px;letter-spacing:.14em;opacity:.85;margin-top:1px}
 @keyframes kfswing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
 @media (max-width:640px){.kf-opensign{right:2px;top:-18px}.kf-opensign-board{padding:9px 18px;box-shadow:0 0 0 3px #FFEEE3}.kf-opensign-board strong{font-size:15px}}
-.kf-social-btn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;text-decoration:none;transition:background .2s ease;flex:none}
+.kf-social-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;text-decoration:none;transition:background .2s ease;flex:none}
 .kf-social-btn:hover{background:rgba(255,255,255,.3)!important}
 .kf-cat-card{background:#FFF8F2!important;border:1px solid #FCE0CC!important;transition:background .3s ease,border-color .3s ease,transform .3s cubic-bezier(.22,1,.36,1),box-shadow .35s ease}
 .kf-cat-card:hover{background:#FF4D1C!important;border-color:#FF4D1C!important;transform:translateY(-4px) scale(1.015);box-shadow:0 16px 34px -12px rgba(230,62,0,.38)}
@@ -161,8 +158,8 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
 .kf-steps-connector-h{height:60px}
 .kf-steps-connector-v{display:none;height:100%;width:60px}
 .kf-steps-connector-v svg{height:100%;width:60px}
-.kf-step-dot-v{position:absolute;width:12px;height:12px;margin:-6px;border-radius:50%;background:#FF4D1C;box-shadow:0 0 0 5px rgba(255,77,28,.22),0 4px 10px rgba(80,40,10,.4);animation:kfStepDotV 9s ease-in-out infinite}
-@keyframes kfStepDotV{0%,13.3%{top:6%;left:30px;opacity:1}23%{top:27%;left:8px}33.3%,46.7%{top:50%;left:30px;opacity:1}57%{top:73%;left:52px}66.7%,80%{top:94%;left:30px;opacity:1}84%{top:94%;left:30px;opacity:0}86%{top:6%;left:30px;opacity:0}88.9%,100%{top:6%;left:30px;opacity:1}}
+.kf-step-dot-v{position:absolute;left:30px;top:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#FF4D1C;box-shadow:0 0 0 5px rgba(255,77,28,.22),0 4px 10px rgba(80,40,10,.4);animation:kfStepDotV 6s ease-in-out infinite}
+@keyframes kfStepDotV{0%,8%{top:0%;opacity:1}46%,54%{top:50%;opacity:1}92%,100%{top:100%;opacity:1}}
 @media (max-width:767px){
   .kf-steps-grid{grid-template-columns:1fr;padding-left:56px;position:relative}
   .kf-steps-connector-h{display:none}
@@ -170,11 +167,23 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
   .kf-step-icon-wrap{margin-bottom:4px}
 }
 @media (min-width:900px){header.kf-nav-overlay{margin-bottom:-149px}.kf-hero-content{padding-top:calc(clamp(48px,8vw,112px) + 149px)!important}}
+header.kf-nav-transparent nav button:hover{background:rgba(255,255,255,.18)!important}
+header:not(.kf-nav-transparent) nav button:hover{background:#FFEEE3!important}
 .kf-whatsapp-fab{position:fixed;z-index:40;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -6px rgba(37,211,102,.55);transition:transform .2s ease,box-shadow .2s ease}
 .kf-whatsapp-fab:hover{transform:scale(1.08);background:#20BD5A}
 .kf-whatsapp-fab::after{content:'';position:absolute;inset:0;border-radius:50%;animation:kfwapulse 2.4s ease-out infinite;pointer-events:none}
 @keyframes kfwapulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}100%{box-shadow:0 0 0 16px rgba(37,211,102,0)}}
 @media (max-width:640px){.kf-whatsapp-fab{width:52px;height:52px;right:14px;bottom:14px}}
+.kf-nav-hamburger{display:none}
+@media (max-width:859px){
+  .kf-nav-desktop{display:none!important}
+  .kf-nav-hamburger{display:grid}
+  header>div{flex-wrap:nowrap}
+}
+@media (max-width:420px){.kf-cart-total-label{display:none}}
+@media (max-width:480px){.kf-floating-cart{left:16px!important;right:86px!important;transform:none!important;justify-content:center;font-size:14.5px;padding:14px 10px;gap:8px;bottom:18px}}
+.kf-nav-drawer-link{border:0;background:#FFEEE3;color:#2C1D12;font-weight:700;font-size:17px;padding:16px 18px;border-radius:12px;text-align:left;display:flex;align-items:center;justify-content:space-between}
+.kf-nav-drawer-link[aria-current="page"]{background:#FF4D1C;color:#fff}
 .kf-rev-card{position:relative;background:#2C1D12;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:30px 26px 26px;display:flex;flex-direction:column;gap:16px;overflow:hidden;transition:transform .25s ease,border-color .25s ease;flex:1}
 .kf-rev-card:hover{border-color:rgba(255,255,255,.18)}
 .kf-rev-quote{color:#FF4D1C;opacity:.9}
@@ -200,29 +209,32 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
   </div>
   <header class="{{ navWrapCls }}" style="position:sticky;top:0;z-index:40;background:{{ headerBg }};backdrop-filter:{{ headerBlur }};-webkit-backdrop-filter:{{ headerBlur }};transition:background .25s ease">
     <div style="max-width:1240px;margin:0 auto;padding:14px clamp(18px,4vw,40px);display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px">
-      <button onClick="{{ nav.home }}" style="all:unset;cursor:pointer;display:flex;align-items:center;gap:10px">
-        <span style="width:42px;height:42px;border-radius:10px;background:#FF4D1C;color:#fff;display:grid;place-items:center;font:600 16px 'Inter','Segoe UI',system-ui,sans-serif;letter-spacing:-0.02em">KF</span>
-        <span style="display:flex;flex-direction:column;line-height:1">
-          <span style="font:600 19px 'Inter','Segoe UI',system-ui,sans-serif;letter-spacing:-0.02em;color:{{ navTextColor }}">Kebab Factory</span>
-          <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:{{ navMuted }};margin-top:4px">BADALONA</span>
+      <button onClick="{{ nav.home }}" style="all:unset;cursor:pointer;display:flex;align-items:center;gap:10px;min-width:0">
+        <span style="width:44px;height:44px;flex:none;border-radius:10px;background:#FF4D1C;color:#fff;display:grid;place-items:center;font:600 16px 'Inter','Segoe UI',system-ui,sans-serif;letter-spacing:-0.02em">KF</span>
+        <span style="display:flex;flex-direction:column;line-height:1;min-width:0">
+          <span style="font:600 19px 'Inter','Segoe UI',system-ui,sans-serif;letter-spacing:-0.02em;color:{{ navTextColor }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Kebab Factory</span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:{{ navMuted }};margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">BADALONA</span>
         </span>
       </button>
-      <nav style="display:flex;gap:4px;margin-left:auto">
-        <button onClick="{{ nav.home }}" style="border:0;background:{{ nav.homeBg }};color:{{ navTextColor }};font-weight:600;font-size:15px;padding:10px 18px;border-radius:10px" style-hover="background:{{ navHoverBg }}">{{ t.home }}</button>
-        <button onClick="{{ nav.menu }}" style="border:0;background:{{ nav.menuBg }};color:{{ navTextColor }};font-weight:600;font-size:15px;padding:10px 18px;border-radius:10px" style-hover="background:{{ navHoverBg }}">{{ t.menuNav }}</button>
+      <nav class="kf-nav-desktop" style="display:flex;gap:4px;margin-left:auto">
+        <button onClick="{{ nav.home }}" style="border:0;background:{{ nav.homeBg }};color:{{ navTextColor }};font-weight:600;font-size:15px;padding:13px 18px;border-radius:10px">{{ t.home }}</button>
+        <button onClick="{{ nav.menu }}" style="border:0;background:{{ nav.menuBg }};color:{{ navTextColor }};font-weight:600;font-size:15px;padding:13px 18px;border-radius:10px">{{ t.menuNav }}</button>
       </nav>
-      <div role="group" aria-label="Idioma / Language" style="display:flex;border:1.5px solid {{ navBorder }};border-radius:10px;padding:3px;gap:2px">
+      <div class="kf-nav-desktop" role="group" aria-label="Idioma / Language" style="display:flex;border:1.5px solid {{ navBorder }};border-radius:10px;padding:4px;gap:3px">
         <sc-for list="{{ langs }}" as="lg" hint-placeholder-count="3">
-          <button onClick="{{ lg.go }}" aria-pressed="{{ lg.pressed }}" style="min-width:34px;height:30px;border:0;border-radius:8px;cursor:pointer;font-weight:700;font-size:12px;background:{{ lg.bg }};color:{{ lg.fg }}">{{ lg.code }}</button>
+          <button onClick="{{ lg.go }}" aria-pressed="{{ lg.pressed }}" style="min-width:40px;height:40px;border:0;border-radius:8px;cursor:pointer;font-weight:700;font-size:12px;background:{{ lg.bg }};color:{{ lg.fg }}">{{ lg.code }}</button>
         </sc-for>
       </div>
-      <button data-cartbtn="1" onClick="{{ openCart }}" aria-label="{{ t.openOrderAria }}" style="border:0;background:#FF4D1C;color:#2C1D12;display:flex;align-items:center;gap:10px;padding:8px 8px 8px 18px;border-radius:10px;font-weight:700;font-size:15px" style-hover="background:#E63E00">
-        <span>{{ cartTotal }}</span>
-        <span style="position:relative;width:34px;height:34px;border-radius:10px;background:#FF4D1C;color:#fff;display:grid;place-items:center">
-          <kf-i n="bag" s="17"></kf-i>
-          <sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:-5px;right:-5px;min-width:20px;height:20px;padding:0 5px;box-sizing:border-box;border-radius:10px;background:#FFF8F2;color:#2C1D12;font-size:12px;font-weight:700;display:grid;place-items:center">{{ cartCount }}</span></sc-if>
-        </span>
-      </button>
+      <div style="display:flex;align-items:center;gap:8px;margin-left:auto;flex:none">
+        <button data-cartbtn="1" onClick="{{ openCart }}" aria-label="{{ t.openOrderAria }}" style="border:0;background:#FF4D1C;color:#2C1D12;display:flex;align-items:center;gap:10px;padding:8px 8px 8px 18px;border-radius:10px;font-weight:700;font-size:15px" style-hover="background:#E63E00">
+          <span class="kf-cart-total-label">{{ cartTotal }}</span>
+          <span style="position:relative;width:34px;height:34px;border-radius:10px;background:#FF4D1C;color:#fff;display:grid;place-items:center">
+            <kf-i n="bag" s="17"></kf-i>
+            <sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:-5px;right:-5px;min-width:20px;height:20px;padding:0 5px;box-sizing:border-box;border-radius:10px;background:#FFF8F2;color:#2C1D12;font-size:12px;font-weight:700;display:grid;place-items:center">{{ cartCount }}</span></sc-if>
+          </span>
+        </button>
+        <button class="kf-nav-hamburger" onClick="{{ toggleNavMenu }}" aria-label="{{ t.openNavMenu }}" aria-expanded="{{ navMenuOpen }}" style="border:0;background:transparent;color:{{ navTextColor }};width:44px;height:44px;border-radius:10px;place-items:center;flex:none"><kf-i n="menu" s="24"></kf-i></button>
+      </div>
     </div>
   </header>
 </sc-if>
@@ -239,7 +251,7 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
           <span style="display:inline-flex;align-items:center;gap:10px;background:rgba(22,48,31,.85);color:#B9E8C9;font-weight:600;font-size:15px;padding:9px 16px 9px 12px;border-radius:10px">
             <span style="width:9px;height:9px;border-radius:50%;background:#4CAF7D;animation:kfpulse 1.8s ease-out infinite"></span>{{ openToday }}
           </span>
-          <button onClick="{{ goTacos }}" style="border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.1);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#ffffff;font-weight:600;font-size:15px;padding:6px 14px 6px 6px;border-radius:10px;display:flex;align-items:center;gap:10px;transition:background .14s,color .14s" style-hover="background:#ffffff;color:#2C1D12" style-active="background:#C6FF3D;color:#2C1D12;transform:scale(.96)"><span style="background:#C6FF3D;color:#2C1D12;font-size:12px;font-weight:700;letter-spacing:.08em;padding:4px 9px;border-radius:10px">{{ t.newBadge }}</span>{{ t.newTacosBtn }}<kf-i n="arrowr" s="16"></kf-i></button>
+          <button onClick="{{ goTacos }}" style="border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.1);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#ffffff;font-weight:600;font-size:15px;padding:10px 14px 10px 6px;border-radius:10px;display:flex;align-items:center;gap:10px;transition:background .14s,color .14s" style-hover="background:#ffffff;color:#2C1D12" style-active="background:#C6FF3D;color:#2C1D12;transform:scale(.96)"><span style="background:#C6FF3D;color:#2C1D12;font-size:12px;font-weight:700;letter-spacing:.08em;padding:4px 9px;border-radius:10px">{{ t.newBadge }}</span>{{ t.newTacosBtn }}<kf-i n="arrowr" s="16"></kf-i></button>
         </div>
         <h1 data-reveal="1" style="font-family:'Inter','Segoe UI',system-ui,sans-serif;font-weight:700;font-size:clamp(42px,6vw,80px);line-height:1.03;letter-spacing:-0.03em;margin:0;color:#ffffff">{{ t.heroPre }}<span style="color:#D9FF6B">{{ eta }}{{ t.heroUnit }}</span>.</h1>
         <p data-reveal="2" style="font-size:clamp(17px,1.5vw,19px);line-height:1.6;color:rgba(255,255,255,.75);margin:0;max-width:500px">{{ t.heroLede }}</p>
@@ -321,12 +333,12 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
     <section style="position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:clamp(24px,3vw,40px) clamp(18px,4vw,40px) clamp(64px,8vw,104px)">
       <div data-reveal="0" style="max-width:640px;margin-bottom:28px">
         <span style="display:inline-flex;align-items:center;gap:10px;font:500 18px/24px 'Inter','Segoe UI',system-ui,sans-serif;color:#E63E00">{{ t.kickerFullMenu }}</span>
-        <h2 style="font-size:clamp(34px,4.4vw,54px);line-height:1.02;margin:8px 0 0">{{ t.fullMenuPre }}<em style="font-style:normal;color:#FF4D1C">{{ t.fullMenuEm }}</em>{{ t.fullMenuPost }}</h2>
+        <h2 style="font-size:clamp(34px,4.4vw,54px);line-height:1.02;margin:8px 0 0">{{ t.fullMenuPre }}<em style="font-style:normal;color:#B83A00">{{ t.fullMenuEm }}</em>{{ t.fullMenuPost }}</h2>
         <p style="font-size:17px;color:#8A7160;margin:14px 0 0">{{ t.fullMenuSub }}</p>
       </div>
       <div data-reveal="1" class="kf-hscroll kf-chip-fade kf-cat-chips" style="padding:2px 2px 24px">
         <sc-for list="{{ homeChips }}" as="c" hint-placeholder-count="7">
-          <button onClick="{{ c.toggle }}" aria-pressed="{{ c.on }}" data-chip="{{ c.sel }}" style="border:0;cursor:pointer;flex:none;background:{{ c.pillBg }};color:{{ c.pillFg }};display:flex;align-items:center;gap:8px;padding:5px 14px 5px 5px;border-radius:999px;font-weight:700;font-size:14.5px;white-space:nowrap;transition:background .3s ease,transform .22s ease,box-shadow .3s ease">
+          <button onClick="{{ c.toggle }}" aria-pressed="{{ c.on }}" data-chip="{{ c.sel }}" style="border:0;cursor:pointer;flex:none;background:{{ c.pillBg }};color:{{ c.pillFg }};display:flex;align-items:center;gap:8px;padding:7px 14px 7px 5px;border-radius:999px;font-weight:700;font-size:14.5px;white-space:nowrap;transition:background .3s ease,transform .22s ease,box-shadow .3s ease">
             <span style="width:34px;height:34px;flex:none;border-radius:50%;background:#ffffff;display:grid;place-items:center;color:#E63E00"><kf-i n="{{ c.icon }}" s="18"></kf-i></span>
             {{ c.name }}
             <span style="font-size:12px;opacity:.75">{{ c.count }}</span>
@@ -359,7 +371,7 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
                     </sc-if>
                     <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px">
                       <strong style="font:600 22px/28px 'Inter','Segoe UI',system-ui,sans-serif;color:#FF4D1C;font-variant-numeric:lining-nums tabular-nums">{{ it.priceTxt }}</strong>
-                      <sc-if value="{{ it.notInCart }}" hint-placeholder-val="{{ true }}"><button onClick="{{ it.add }}" style="border:0;background:#FF4D1C;color:#fff;font-weight:700;font-size:15px;padding:11px 18px;border-radius:10px;display:flex;align-items:center;gap:6px" style-hover="background:#E63E00" style-active="background:#C6FF3D;color:#2C1D12;transform:scale(.96)"><kf-i n="plus" s="16" w="3"></kf-i>{{ t.add }}</button></sc-if>
+                      <sc-if value="{{ it.notInCart }}" hint-placeholder-val="{{ true }}"><button onClick="{{ it.add }}" style="border:0;background:#FF4D1C;color:#fff;font-weight:700;font-size:15px;padding:14px 18px;border-radius:10px;display:flex;align-items:center;gap:6px" style-hover="background:#E63E00" style-active="background:#C6FF3D;color:#2C1D12;transform:scale(.96)"><kf-i n="plus" s="16" w="3"></kf-i>{{ t.add }}</button></sc-if>
                       <sc-if value="{{ it.inCart }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:4px;background:#FF4D1C;color:#2C1D12;border-radius:10px;padding:4px"><button onClick="{{ it.dec }}" aria-label="{{ t.removeOne }}" style="border:0;width:36px;height:36px;border-radius:10px;background:transparent;color:inherit;display:grid;place-items:center" style-hover="background:#E63E00"><kf-i n="minus" s="16" w="3"></kf-i></button><span style="min-width:22px;text-align:center;font-weight:700">{{ it.qty }}</span><button onClick="{{ it.add }}" aria-label="{{ t.addOne }}" style="border:0;width:36px;height:36px;border-radius:10px;background:#FF4D1C;color:#fff;display:grid;place-items:center" style-hover="background:#FF4D1C"><kf-i n="plus" s="16" w="3"></kf-i></button></div></sc-if>
                     </div>
                   </div>
@@ -390,7 +402,7 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
       </div>
       <div data-reveal="2" style="display:flex;justify-content:center;gap:8px;margin-top:10px">
         <sc-for list="{{ combosDots }}" as="d" hint-placeholder-count="4">
-          <button onClick="{{ d.go }}" aria-label="{{ d.label }}" style="border:0;padding:0;height:6px;width:{{ d.w }};border-radius:999px;background:{{ d.bg }};cursor:pointer;transition:width .3s ease,background .3s ease"></button>
+          <button onClick="{{ d.go }}" aria-label="{{ d.label }}" style="border:0;background:transparent;padding:14px 4px;cursor:pointer;display:flex"><span style="display:block;height:6px;width:{{ d.w }};border-radius:999px;background:{{ d.bg }};transition:width .3s ease,background .3s ease"></span></button>
         </sc-for>
       </div>
     </div>
@@ -421,7 +433,7 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
             </sc-for>
             <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:10px;border-top:1px solid #FFEEE3">
               <strong style="font:600 18px/24px 'Inter','Segoe UI',system-ui,sans-serif;color:#FF4D1C;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap">{{ it.priceTxt }}</strong>
-              <sc-if value="{{ it.notInCart }}" hint-placeholder-val="{{ true }}"><button onClick="{{ it.add }}" style="border:0;background:#FF4D1C;color:#fff;font-weight:700;font-size:14px;padding:9px 14px;border-radius:10px;display:flex;align-items:center;gap:6px;white-space:nowrap;flex:none" style-hover="background:#E63E00" style-active="background:#C6FF3D;color:#2C1D12;transform:scale(.96)"><kf-i n="plus" s="15" w="3"></kf-i>{{ t.add }}</button></sc-if>
+              <sc-if value="{{ it.notInCart }}" hint-placeholder-val="{{ true }}"><button onClick="{{ it.add }}" style="border:0;background:#FF4D1C;color:#fff;font-weight:700;font-size:14px;padding:14px 14px;border-radius:10px;display:flex;align-items:center;gap:6px;white-space:nowrap;flex:none" style-hover="background:#E63E00" style-active="background:#C6FF3D;color:#2C1D12;transform:scale(.96)"><kf-i n="plus" s="15" w="3"></kf-i>{{ t.add }}</button></sc-if>
               <sc-if value="{{ it.inCart }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:4px;background:#FF4D1C;color:#2C1D12;border-radius:10px;padding:4px"><button onClick="{{ it.dec }}" aria-label="{{ t.removeOne }}" style="border:0;width:32px;height:32px;border-radius:8px;background:transparent;color:inherit;display:grid;place-items:center" style-hover="background:#E63E00"><kf-i n="minus" s="14" w="3"></kf-i></button><span style="min-width:20px;text-align:center;font-weight:700;font-size:14px">{{ it.qty }}</span><button onClick="{{ it.add }}" aria-label="{{ t.addOne }}" style="border:0;width:32px;height:32px;border-radius:8px;background:#FF4D1C;color:#fff;display:grid;place-items:center" style-hover="background:#FF4D1C"><kf-i n="plus" s="14" w="3"></kf-i></button></div></sc-if>
             </div>
           </div>
@@ -433,7 +445,7 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
     <section style="position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:clamp(24px,3vw,40px) clamp(18px,4vw,40px) clamp(64px,8vw,104px)">
     <div data-reveal="0" style="margin-bottom:36px">
       <span style="display:inline-flex;align-items:center;gap:10px;font:500 18px/24px 'Inter','Segoe UI',system-ui,sans-serif;color:#FF4D1C">{{ t.kickerHow }}</span>
-      <h2 style="font-size:clamp(34px,4.4vw,54px);line-height:1.02;margin:8px 0 0">{{ t.stepsPre }}<em style="font-style:normal;color:#FF4D1C">{{ t.stepsEm }}</em></h2>
+      <h2 style="font-size:clamp(34px,4.4vw,54px);line-height:1.02;margin:8px 0 0">{{ t.stepsPre }}<em style="font-style:normal;color:#B83A00">{{ t.stepsEm }}</em></h2>
     </div>
     <div class="kf-steps-wrap">
       <div class="kf-steps-connector kf-steps-connector-h" aria-hidden="true">
@@ -441,7 +453,7 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
         <span class="kf-step-dot"></span>
       </div>
       <div class="kf-steps-connector kf-steps-connector-v" aria-hidden="true">
-        <svg viewBox="0 0 60 100" preserveAspectRatio="none"><path class="kf-step-path" d="M30,4 Q6,27 30,50 Q54,73 30,96"/></svg>
+        <svg viewBox="0 0 60 100" preserveAspectRatio="none"><path class="kf-step-path" d="M30,0 L30,100"/></svg>
         <span class="kf-step-dot-v"></span>
       </div>
       <div class="kf-steps-grid">
@@ -517,34 +529,33 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
     </div>
     <div data-reveal="0" style="position:relative;z-index:1;max-width:720px;margin-bottom:56px">
       <span style="display:inline-flex;align-items:center;gap:10px;font:500 18px/24px 'Inter','Segoe UI',system-ui,sans-serif;color:#2C1D12">{{ t.kickerStory }}</span>
-      <h2 style="font-size:clamp(34px,4.4vw,54px);line-height:1.05;margin:8px 0 0">{{ t.storyPre }}<em style="font-style:normal;color:#FF4D1C">{{ t.storyEm }}</em>{{ t.storyPost }}</h2>
+      <h2 style="font-size:clamp(34px,4.4vw,54px);line-height:1.05;margin:8px 0 0">{{ t.storyPre }}<em style="font-style:normal;color:#B83A00">{{ t.storyEm }}</em>{{ t.storyPost }}</h2>
       <p style="font-size:18px;line-height:1.6;color:#8A7160;margin:18px 0 0">{{ t.storyBody }}</p>
     </div>
     <div class="kf-journey">
       <div class="kf-journey-road">
         <svg viewBox="0 0 1000 900" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M500 0 C500 40 750 55 750 90 C750 220 250 200 250 342 C250 480 750 470 750 612 C750 760 500 750 500 900" fill="none" stroke="rgba(44,29,18,.22)" stroke-width="116" stroke-linecap="round" transform="translate(0,18)"></path>
-          <path class="kf-road-path" d="M500 0 C500 40 750 55 750 90 C750 220 250 200 250 342 C250 480 750 470 750 612 C750 760 500 750 500 900" fill="none" stroke="#2C1D12" stroke-width="100" stroke-linecap="round"></path>
-          <path d="M500 0 C500 40 750 55 750 90 C750 220 250 200 250 342 C250 480 750 470 750 612 C750 760 500 750 500 900" fill="none" stroke="#FFD9BE" stroke-width="10" stroke-linecap="round" stroke-dasharray="40 46"></path>
+          <path d="M500,0 L500,900" fill="none" stroke="rgba(44,29,18,.22)" stroke-width="16" stroke-linecap="round" transform="translate(0,4)"></path>
+          <path class="kf-road-path" d="M500,0 L500,900" fill="none" stroke="#2C1D12" stroke-width="10" stroke-linecap="round"></path>
+          <path d="M500,0 L500,900" fill="none" stroke="#FFD9BE" stroke-width="4" stroke-linecap="round" stroke-dasharray="14 16"></path>
         </svg>
-        <sc-for list="{{ journeyAmbient }}" as="am" hint-placeholder-count="7">
-          <span class="kf-amb" style="left:{{ am.x }}%;top:{{ am.y }}%"><kf-i n="{{ am.icon }}" s="13"></kf-i></span>
-        </sc-for>
-        <sc-for list="{{ journeyStops }}" as="st" hint-placeholder-count="4">
-          <div>
-            <span class="kf-scene-pin" style="left:{{ st.xPct }}%;top:{{ st.yPct }}%;background:{{ st.pinBg }};color:{{ st.pinFg }}"><kf-i n="{{ st.icon }}" s="15"></kf-i></span>
-            <div class="kf-scene kf-side-{{ st.side }}" style="top:{{ st.yPct }}%">
-              <div class="kf-scene-card" data-reveal="{{ st.d }}" data-wave="1">
-                <div class="kf-scene-card-img" style="background-image:{{ st.bg }}"></div>
-                <div class="kf-scene-card-body">
-                  <sc-if value="{{ st.hasYear }}" hint-placeholder-val="{{ false }}"><strong>{{ st.year }}</strong></sc-if>
-                  <h3>{{ st.title }}</h3>
-                  <sc-if value="{{ st.text }}" hint-placeholder-val="{{ false }}"><p>{{ st.text }}</p></sc-if>
+        <div class="kf-journey-stops">
+          <sc-for list="{{ journeyStops }}" as="st" hint-placeholder-count="4">
+            <div class="kf-scene-row kf-side-{{ st.side }}">
+              <span class="kf-scene-pin" style="background:{{ st.pinBg }};color:{{ st.pinFg }}"><kf-i n="{{ st.icon }}" s="15"></kf-i></span>
+              <div class="kf-scene">
+                <div class="kf-scene-card" data-reveal="{{ st.d }}" data-wave="1">
+                  <div class="kf-scene-card-img" style="background-image:{{ st.bg }}"></div>
+                  <div class="kf-scene-card-body">
+                    <sc-if value="{{ st.hasYear }}" hint-placeholder-val="{{ false }}"><strong>{{ st.year }}</strong></sc-if>
+                    <h3>{{ st.title }}</h3>
+                    <sc-if value="{{ st.text }}" hint-placeholder-val="{{ false }}"><p>{{ st.text }}</p></sc-if>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </sc-for>
+          </sc-for>
+        </div>
         <div class="kf-rider-wrap"><div class="kf-rider"><kf-i n="bike" s="20"></kf-i></div></div>
       </div>
     </div>
@@ -607,7 +618,7 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
       <div data-reveal="0" style="display:flex;flex-direction:column;gap:26px;min-width:0">
         <div>
           <span style="display:inline-flex;align-items:center;gap:10px;font:500 18px/24px 'Inter','Segoe UI',system-ui,sans-serif;color:#2C1D12">{{ t.kickerFaq }}</span>
-          <h2 style="font-size:clamp(30px,3.6vw,44px);line-height:1.1;margin:8px 0 0">{{ t.faqPre }}<em style="font-style:normal;color:#FF4D1C">{{ t.faqEm }}</em></h2>
+          <h2 style="font-size:clamp(30px,3.6vw,44px);line-height:1.1;margin:8px 0 0">{{ t.faqPre }}<em style="font-style:normal;color:#B83A00">{{ t.faqEm }}</em></h2>
         </div>
         <div style="display:flex;flex-direction:column;gap:14px">
           <sc-for list="{{ faq }}" as="f" hint-placeholder-count="6">
@@ -624,15 +635,15 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
         </div>
       </div>
       <div data-reveal="1" style="display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:16px;aspect-ratio:1;min-width:0">
-        <div style="border-radius:18px;overflow:hidden;background:url(assets/food/wings.png) 50% 42%/cover;box-shadow:0 20px 40px -20px rgba(80,40,10,.35)"></div>
-        <div style="position:relative;border-radius:18px;overflow:hidden;background:url(assets/food/durum.png) 50% 60%/cover;box-shadow:0 20px 40px -20px rgba(80,40,10,.35)">
+        <div style="border-radius:18px;overflow:hidden;background:url(assets/food/wings.jpg) 50% 42%/cover;box-shadow:0 20px 40px -20px rgba(80,40,10,.35)"></div>
+        <div style="position:relative;border-radius:18px;overflow:hidden;background:url(assets/food/durum.jpg) 50% 60%/cover;box-shadow:0 20px 40px -20px rgba(80,40,10,.35)">
           <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(230,62,0,.9),rgba(230,62,0,.2) 65%)"></div>
           <div style="position:relative;height:100%;color:#fff;padding:clamp(16px,2.4vw,26px);display:flex;flex-direction:column;justify-content:flex-end;gap:4px">
             <strong style="font-size:clamp(24px,3vw,34px);font-family:'Inter','Segoe UI',system-ui,sans-serif;letter-spacing:-0.02em">50.000+</strong>
             <span style="font-size:14px;line-height:1.3;opacity:.92">{{ t.faqStat1 }}</span>
           </div>
         </div>
-        <div style="position:relative;border-radius:18px;overflow:hidden;background:url(assets/food/combo.png) 50% 45%/cover;box-shadow:0 20px 40px -20px rgba(80,40,10,.35)">
+        <div style="position:relative;border-radius:18px;overflow:hidden;background:url(assets/food/combo.jpg) 50% 45%/cover;box-shadow:0 20px 40px -20px rgba(80,40,10,.35)">
           <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(46,107,76,.9),rgba(46,107,76,.2) 65%)"></div>
           <div style="position:relative;height:100%;color:#fff;padding:clamp(16px,2.4vw,26px);display:flex;flex-direction:column;justify-content:flex-end;gap:4px">
             <strong style="font-size:clamp(24px,3vw,34px);font-family:'Inter','Segoe UI',system-ui,sans-serif;letter-spacing:-0.02em">92%</strong>
@@ -677,6 +688,11 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
       </div>
     </div>
   </section></div>
+  <sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}">
+    <button class="kf-floating-cart" onClick="{{ openCart }}" style="position:fixed;z-index:35;left:50%;bottom:24px;transform:translateX(-50%);border:0;background:#FF4D1C;color:#fff;font-weight:700;font-size:17px;padding:16px 26px;border-radius:10px;display:flex;align-items:center;gap:14px;white-space:nowrap;box-shadow:0 14px 34px rgba(255,77,28,.4)" style-hover="background:#E63E00">
+      <span style="background:#fff;color:#E63E00;min-width:26px;height:26px;border-radius:10px;display:grid;place-items:center;font-size:14px;font-weight:700">{{ cartCount }}</span>{{ t.viewOrder }} · {{ cartTotal }}
+    </button>
+  </sc-if>
 </main>
 </sc-if>
 
@@ -696,14 +712,14 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
   <div style="position:relative">
     <div data-reveal="0" style="position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
       <div>
-        <h1 style="font-size:clamp(44px,6vw,76px);line-height:1;margin:0;letter-spacing:-0.02em">{{ t.menuPre }}<em style="font-style:normal;color:#FF4D1C">{{ t.menuEm }}</em></h1>
+        <h1 style="font-size:clamp(44px,6vw,76px);line-height:1;margin:0;letter-spacing:-0.02em">{{ t.menuPre }}<em style="font-style:normal;color:#B83A00">{{ t.menuEm }}</em></h1>
         <p style="font-size:17px;color:#8A7160;margin:12px 0 0">{{ t.menuSub }}</p>
       </div>
     </div>
     <div style="position:sticky;top:72px;z-index:30;margin:28px 0 8px;padding:10px 0;display:flex;flex-direction:column;gap:12px">
     <div class="kf-hscroll kf-chip-fade kf-cat-chips" style="padding:2px 2px 6px">
       <sc-for list="{{ chips }}" as="c" hint-placeholder-count="7">
-        <button onClick="{{ c.toggle }}" aria-pressed="{{ c.on }}" data-chip="{{ c.sel }}" style="border:0;cursor:pointer;flex:none;background:{{ c.pillBg }};color:{{ c.pillFg }};display:flex;align-items:center;gap:8px;padding:5px 14px 5px 5px;border-radius:999px;font-weight:700;font-size:14.5px;white-space:nowrap;transition:background .3s ease,transform .22s ease,box-shadow .3s ease">
+        <button onClick="{{ c.toggle }}" aria-pressed="{{ c.on }}" data-chip="{{ c.sel }}" style="border:0;cursor:pointer;flex:none;background:{{ c.pillBg }};color:{{ c.pillFg }};display:flex;align-items:center;gap:8px;padding:7px 14px 7px 5px;border-radius:999px;font-weight:700;font-size:14.5px;white-space:nowrap;transition:background .3s ease,transform .22s ease,box-shadow .3s ease">
           <span style="width:34px;height:34px;flex:none;border-radius:50%;background:#ffffff;display:grid;place-items:center;color:#E63E00"><kf-i n="{{ c.icon }}" s="18"></kf-i></span>
           {{ c.name }}
           <span style="font-size:12px;opacity:.75">{{ c.count }}</span>
@@ -745,7 +761,7 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
               </sc-if>
               <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px">
                 <strong style="font:600 22px/28px 'Inter','Segoe UI',system-ui,sans-serif;color:#FF4D1C;font-variant-numeric:lining-nums tabular-nums">{{ it.priceTxt }}</strong>
-                <sc-if value="{{ it.notInCart }}" hint-placeholder-val="{{ true }}"><button onClick="{{ it.add }}" style="border:0;background:#FF4D1C;color:#fff;font-weight:700;font-size:15px;padding:11px 18px;border-radius:10px;display:flex;align-items:center;gap:6px" style-hover="background:#E63E00" style-active="background:#C6FF3D;color:#2C1D12;transform:scale(.96)"><kf-i n="plus" s="16" w="3"></kf-i>{{ t.add }}</button></sc-if>
+                <sc-if value="{{ it.notInCart }}" hint-placeholder-val="{{ true }}"><button onClick="{{ it.add }}" style="border:0;background:#FF4D1C;color:#fff;font-weight:700;font-size:15px;padding:14px 18px;border-radius:10px;display:flex;align-items:center;gap:6px" style-hover="background:#E63E00" style-active="background:#C6FF3D;color:#2C1D12;transform:scale(.96)"><kf-i n="plus" s="16" w="3"></kf-i>{{ t.add }}</button></sc-if>
                 <sc-if value="{{ it.inCart }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:4px;background:#FF4D1C;color:#2C1D12;border-radius:10px;padding:4px"><button onClick="{{ it.dec }}" aria-label="{{ t.removeOne }}" style="border:0;width:36px;height:36px;border-radius:10px;background:transparent;color:inherit;display:grid;place-items:center" style-hover="background:#E63E00"><kf-i n="minus" s="16" w="3"></kf-i></button><span style="min-width:22px;text-align:center;font-weight:700">{{ it.qty }}</span><button onClick="{{ it.add }}" aria-label="{{ t.addOne }}" style="border:0;width:36px;height:36px;border-radius:10px;background:#FF4D1C;color:#fff;display:grid;place-items:center" style-hover="background:#FF4D1C"><kf-i n="plus" s="16" w="3"></kf-i></button></div></sc-if>
               </div>
             </div>
@@ -758,7 +774,7 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
     <div style="padding:80px 0;text-align:center;color:#8A7160;font-size:17px">{{ noResultsMsg }}</div>
   </sc-if>
   <sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}">
-    <button onClick="{{ openCart }}" style="position:fixed;z-index:35;left:50%;bottom:24px;transform:translateX(-50%);border:0;background:#FF4D1C;color:#fff;font-weight:700;font-size:17px;padding:16px 26px;border-radius:10px;display:flex;align-items:center;gap:14px;box-shadow:0 14px 34px rgba(255,77,28,.4)" style-hover="background:#E63E00">
+    <button class="kf-floating-cart" onClick="{{ openCart }}" style="position:fixed;z-index:35;left:50%;bottom:24px;transform:translateX(-50%);border:0;background:#FF4D1C;color:#fff;font-weight:700;font-size:17px;padding:16px 26px;border-radius:10px;display:flex;align-items:center;gap:14px;white-space:nowrap;box-shadow:0 14px 34px rgba(255,77,28,.4)" style-hover="background:#E63E00">
       <span style="background:#fff;color:#E63E00;min-width:26px;height:26px;border-radius:10px;display:grid;place-items:center;font-size:14px;font-weight:700">{{ cartCount }}</span>{{ t.viewOrder }} · {{ cartTotal }}
     </button>
   </sc-if>
@@ -776,6 +792,28 @@ button[data-chip="off"]:hover{background:#FFDCC0!important;transform:translateY(
 </sc-if>
 
 <a href="https://wa.me/c/34683275326" target="_blank" rel="noopener" aria-label="{{ t.whatsappAria }}" class="kf-whatsapp-fab"><kf-i n="whatsapp" s="28"></kf-i></a>
+
+<sc-if value="{{ navMenuOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeNavMenu }}" style="position:fixed;inset:0;z-index:62;background:rgba(32,30,29,.42)"></div>
+  <aside data-nav-drawer="1" role="dialog" aria-label="{{ t.openNavMenu }}" style="position:fixed;z-index:63;top:0;left:0;bottom:0;width:min(84%,340px);background:#FFF8F2;display:flex;flex-direction:column;gap:6px;padding:20px;box-shadow:20px 0 50px rgba(0,0,0,.18)">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+      <span style="display:flex;align-items:center;gap:10px">
+        <span style="width:38px;height:38px;border-radius:10px;background:#FF4D1C;color:#fff;display:grid;place-items:center;font:600 15px 'Inter','Segoe UI',system-ui,sans-serif">KF</span>
+        <strong style="font-size:17px">Kebab Factory</strong>
+      </span>
+      <button onClick="{{ closeNavMenu }}" aria-label="{{ t.closeNavMenu }}" style="border:0;width:40px;height:40px;border-radius:10px;background:#FFEEE3;display:grid;place-items:center;color:#2C1D12"><kf-i n="x" s="18"></kf-i></button>
+    </div>
+    <button class="kf-nav-drawer-link" onClick="{{ nav.home }}" aria-current="{{ navHomeCurrent }}">{{ t.home }}<kf-i n="arrowr" s="18"></kf-i></button>
+    <button class="kf-nav-drawer-link" onClick="{{ nav.menu }}" aria-current="{{ navMenuCurrent }}">{{ t.menuNav }}<kf-i n="arrowr" s="18"></kf-i></button>
+    <div style="height:1px;background:#FCE0CC;margin:14px 0"></div>
+    <span style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A7160;margin-bottom:8px">Idioma / Language</span>
+    <div role="group" aria-label="Idioma / Language" style="display:flex;gap:8px">
+      <sc-for list="{{ langs }}" as="lg" hint-placeholder-count="3">
+        <button onClick="{{ lg.go }}" aria-pressed="{{ lg.pressed }}" style="flex:1;height:48px;border:1.5px solid #FCE0CC;border-radius:10px;cursor:pointer;font-weight:700;font-size:14px;background:{{ lg.navBg }};color:{{ lg.navFg }}">{{ lg.code }}</button>
+      </sc-for>
+    </div>
+  </aside>
+</sc-if>
 
 <sc-if value="{{ drawer.open }}" hint-placeholder-val="{{ false }}">
   <div onClick="{{ drawer.close }}" style="position:fixed;inset:0;z-index:60;background:rgba(32,30,29,.42)"></div>
@@ -878,15 +916,15 @@ class Component extends DCLogic {
     {id:'combos',name:N('Special Combo Menus','Menús combo especiales','Menús combo especials'),icon:'package'}
   ];
   static ITEMS = [
-    {id:'d1',cat:'durums',name:N('Gratinated Dürüm','Dürüm gratinado','Dürüm gratinat'),desc:N('Rolled lavash baked under melted cheese and tomato sauce.','Pan lavash enrollado, gratinado con queso fundido y salsa de tomate.','Pa lavash enrotllat, gratinat amb formatge fos i salsa de tomàquet.'),price:7.9,img:'durum.png',pos:'50% 60%',badge:N('Best seller','El más pedido','El més demanat'),alg:['gluten','dairy']},
+    {id:'d1',cat:'durums',name:N('Gratinated Dürüm','Dürüm gratinado','Dürüm gratinat'),desc:N('Rolled lavash baked under melted cheese and tomato sauce.','Pan lavash enrollado, gratinado con queso fundido y salsa de tomate.','Pa lavash enrotllat, gratinat amb formatge fos i salsa de tomàquet.'),price:7.9,img:'durum.jpg',pos:'50% 60%',badge:N('Best seller','El más pedido','El més demanat'),alg:['gluten','dairy']},
     {id:'d2',cat:'durums',name:N('Chicken Dürüm','Dürüm de pollo','Dürüm de pollastre'),desc:N('Grilled chicken, lettuce, tomato, onion and yogurt sauce.','Pollo a la brasa, lechuga, tomate, cebolla y salsa de yogur.','Pollastre a la brasa, enciam, tomàquet, ceba i salsa de iogurt.'),price:6.5,img:'durum-chicken.jpg',pos:'50% 45%',alg:['gluten','dairy']},
     {id:'d3',cat:'durums',name:N('Veal Dürüm','Dürüm de ternera','Dürüm de vedella'),desc:N('Grilled veal kebab with fresh salad and garlic sauce.','Kebab de ternera a la brasa con ensalada fresca y salsa de ajo.','Kebab de vedella a la brasa amb amanida fresca i salsa d’all.'),price:6.9,img:'durum-veal.jpg',pos:'42% 45%',alg:['gluten','egg']},
     {id:'d4',cat:'durums',name:N('Falafel Dürüm','Dürüm de falafel','Dürüm de falàfel'),desc:N('Homemade chickpea falafel, salad and tahini sauce.','Falafel casero de garbanzo, ensalada y salsa tahini.','Falàfel casolà de cigró, amanida i salsa tahina.'),price:6.0,img:'durum-falafel.jpg',pos:'55% 45%',alg:['gluten','sesame']},
-    {id:'p1',cat:'pizzas',name:N('Margherita','Margarita','Margarida'),desc:N('Tomato sauce, mozzarella, cherry tomatoes and basil.','Salsa de tomate, mozzarella, tomates cherry y albahaca.','Salsa de tomàquet, mozzarella, tomàquets cherry i alfàbrega.'),price:9.5,img:'pizza.png',pos:'50% 70%',alg:['gluten','dairy']},
+    {id:'p1',cat:'pizzas',name:N('Margherita','Margarita','Margarida'),desc:N('Tomato sauce, mozzarella, cherry tomatoes and basil.','Salsa de tomate, mozzarella, tomates cherry y albahaca.','Salsa de tomàquet, mozzarella, tomàquets cherry i alfàbrega.'),price:9.5,img:'pizza.jpg',pos:'50% 70%',alg:['gluten','dairy']},
     {id:'p2',cat:'pizzas',name:N('Kebab Pizza','Pizza kebab','Pizza kebab'),desc:N('Tomato, mozzarella, kebab meat, red onion and yogurt sauce.','Tomate, mozzarella, carne de kebab, cebolla morada y salsa de yogur.','Tomàquet, mozzarella, carn de kebab, ceba morada i salsa de iogurt.'),price:11.5,img:'pizza-kebab.jpg',pos:'50% 42%',badge:N('House pizza','La pizza de la casa','La pizza de la casa'),alg:['gluten','dairy']},
     {id:'p3',cat:'pizzas',name:N('Barbecue Pizza','Pizza barbacoa','Pizza barbacoa'),desc:N('BBQ sauce, mozzarella, chicken, bacon and onion.','Salsa barbacoa, mozzarella, pollo, bacon y cebolla.','Salsa barbacoa, mozzarella, pollastre, bacó i ceba.'),price:11.0,img:'pizza-bbq.jpg',pos:'50% 45%',alg:['gluten','dairy']},
     {id:'p4',cat:'pizzas',name:N('Four Cheese','Cuatro quesos','Quatre formatges'),desc:N('Mozzarella, gorgonzola, emmental and parmesan.','Mozzarella, gorgonzola, emmental y parmesano.','Mozzarella, gorgonzola, emmental i parmesà.'),price:10.5,img:'pizza-fourcheese.jpg',pos:'50% 45%',alg:['gluten','dairy']},
-    {id:'b1',cat:'burgers',name:N('Classic Cheeseburger','Cheeseburger clásica','Cheeseburger clàssica'),desc:N('180 g beef, cheddar, tomato, lettuce and pickles on brioche. With fries.','Carne de ternera de 180 g, cheddar fundido, tomate, lechuga y pepinillos en pan brioche. Con patatas.','Vedella de 180 g, cheddar fos, tomàquet, enciam i cogombrets en pa brioix. Amb patates.'),price:8.9,img:'burger-house.png',pos:'30% 55%',alg:['gluten','dairy','egg']},
+    {id:'b1',cat:'burgers',name:N('Classic Cheeseburger','Cheeseburger clásica','Cheeseburger clàssica'),desc:N('180 g beef, cheddar, tomato, lettuce and pickles on brioche. With fries.','Carne de ternera de 180 g, cheddar fundido, tomate, lechuga y pepinillos en pan brioche. Con patatas.','Vedella de 180 g, cheddar fos, tomàquet, enciam i cogombrets en pa brioix. Amb patates.'),price:8.9,img:'burger-house.jpg',pos:'30% 55%',alg:['gluten','dairy','egg']},
     {id:'b2',cat:'burgers',name:N('Double Smash Burger','Doble smash burger','Doble smash burger'),desc:N('Two smashed beef patties, double cheddar, onion and house sauce.','Dos hamburguesas smash de ternera, doble cheddar, cebolla y salsa de la casa.','Dues hamburgueses smash de vedella, doble cheddar, ceba i salsa de la casa.'),price:10.9,img:'burger-smash.jpg',pos:'35% 40%',alg:['gluten','dairy']},
     {id:'b3',cat:'burgers',name:N('Crispy Chicken Burger','Burger de pollo crujiente','Burger de pollastre cruixent'),desc:N('Crispy fried chicken, lettuce and garlic mayo.','Pollo frito crujiente, lechuga y mayonesa de ajo.','Pollastre fregit cruixent, enciam i maionesa d’all.'),price:8.5,img:'burger-crispy-chicken.jpg',pos:'42% 45%',alg:['gluten','egg']},
     {id:'t1',cat:'tacos',name:N('Chicken Fried Taco','Taco frito de pollo','Taco fregit de pollastre'),desc:N('Toasted tortilla filled with chicken, fries and melted cheese sauce.','Tortilla tostada rellena de pollo, patatas fritas y salsa de queso fundido.','Tortilla torrada farcida de pollastre, patates fregides i salsa de formatge fos.'),price:7.5,badge:N('New','Nuevo','Nou'),img:'tacos2.jpg',pos:'68% 62%',alg:['gluten','dairy']},
@@ -897,17 +935,17 @@ class Component extends DCLogic {
     {id:'k3',cat:'drinks',name:N('Fanta Orange','Fanta naranja','Fanta taronja'),desc:N('33 cl can, ice cold.','Lata de 33 cl, bien fría.','Llauna de 33 cl, ben freda.'),price:1.8,img:'drink-fanta.jpg',pos:'50% 45%'},
     {id:'k4',cat:'drinks',name:N('Still Water','Agua mineral','Aigua mineral'),desc:N('50 cl bottle.','Botella de 50 cl.','Ampolla de 50 cl.'),price:1.2,img:'drink-water.jpg',pos:'35% 55%'},
     {id:'k5',cat:'drinks',name:N('Ayran','Ayran','Ayran'),desc:N('Chilled, lightly salted yogurt drink.','Bebida de yogur fresca y ligeramente salada.','Beguda de iogurt fresca i lleugerament salada.'),price:2.0,img:'drink-ayran.jpg',pos:'50% 45%',alg:['dairy']},
-    {id:'c1',cat:'combos',name:N('Factory Combo','Combo Factory','Combo Factory'),desc:N('Burger, fries, 4 chicken nuggets and a drink. For the really hungry days.','Hamburguesa, patatas fritas, 4 nuggets de pollo y una bebida. Para los días de mucha hambre.','Hamburguesa, patates fregides, 4 nuggets de pollastre i una beguda. Per als dies de molta gana.'),price:12.9,img:'combo.png',pos:'45% 60%',badge:N('Most ordered','El más pedido','El més demanat'),alg:['gluten','dairy','egg']},
-    {id:'c2',cat:'combos',name:N('Dürüm Menu','Menú dürüm','Menú dürüm'),desc:N('Any dürüm with fries and a drink.','Cualquier dürüm con patatas fritas y una bebida.','Qualsevol dürüm amb patates fregides i una beguda.'),price:9.5,img:'durum.png',pos:'50% 50%',alg:['gluten','dairy']},
-    {id:'c3',cat:'combos',name:N('Wings Menu','Menú de alitas','Menú d’ales'),desc:N('8 crispy wings, fries, garlic dip and a drink.','8 alitas crujientes, patatas fritas, salsa de ajo y una bebida.','8 ales cruixents, patates fregides, salsa d’all i una beguda.'),price:10.5,img:'wings.png',pos:'50% 50%',alg:['gluten','egg']},
-    {id:'c4',cat:'combos',name:N('Family Pizza Menu','Menú pizza familiar','Menú pizza familiar'),desc:N('2 medium pizzas, 6 wings and a 1.5 L drink.','2 pizzas medianas, 6 alitas y un refresco de 1,5 L.','2 pizzes mitjanes, 6 ales i un refresc d’1,5 L.'),price:24.9,img:'pizza.png',pos:'50% 40%',alg:['gluten','dairy']}
+    {id:'c1',cat:'combos',name:N('Factory Combo','Combo Factory','Combo Factory'),desc:N('Burger, fries, 4 chicken nuggets and a drink. For the really hungry days.','Hamburguesa, patatas fritas, 4 nuggets de pollo y una bebida. Para los días de mucha hambre.','Hamburguesa, patates fregides, 4 nuggets de pollastre i una beguda. Per als dies de molta gana.'),price:12.9,img:'combo.jpg',pos:'45% 60%',badge:N('Most ordered','El más pedido','El més demanat'),alg:['gluten','dairy','egg']},
+    {id:'c2',cat:'combos',name:N('Dürüm Menu','Menú dürüm','Menú dürüm'),desc:N('Any dürüm with fries and a drink.','Cualquier dürüm con patatas fritas y una bebida.','Qualsevol dürüm amb patates fregides i una beguda.'),price:9.5,img:'durum.jpg',pos:'50% 50%',alg:['gluten','dairy']},
+    {id:'c3',cat:'combos',name:N('Wings Menu','Menú de alitas','Menú d’ales'),desc:N('8 crispy wings, fries, garlic dip and a drink.','8 alitas crujientes, patatas fritas, salsa de ajo y una bebida.','8 ales cruixents, patates fregides, salsa d’all i una beguda.'),price:10.5,img:'wings.jpg',pos:'50% 50%',alg:['gluten','egg']},
+    {id:'c4',cat:'combos',name:N('Family Pizza Menu','Menú pizza familiar','Menú pizza familiar'),desc:N('2 medium pizzas, 6 wings and a 1.5 L drink.','2 pizzas medianas, 6 alitas y un refresco de 1,5 L.','2 pizzes mitjanes, 6 ales i un refresc d’1,5 L.'),price:24.9,img:'pizza.jpg',pos:'50% 40%',alg:['gluten','dairy']}
   ];
   static ALLERGENS = {
     gluten:N('Gluten','Gluten','Gluten'), dairy:N('Dairy','Lácteos','Làctics'), egg:N('Egg','Huevo','Ou'),
     sesame:N('Sesame','Sésamo','Sèsam'), soy:N('Soy','Soja','Soja'), mustard:N('Mustard','Mostaza','Mostassa'),
     nuts:N('Nuts','Frutos secos','Fruits secs'), sulphites:N('Sulphites','Sulfitos','Sulfits'), celery:N('Celery','Apio','Api')
   };
-  static SLIDES = [{img:'burger-house.png',pos:'30% 50%',id:'b2'},{img:'tacos3.jpg',pos:'45% 40%',id:'t2'},{img:'combo.png',pos:'50% 60%',id:'c1'},{img:'tacos2.jpg',pos:'55% 45%',id:'t1'}];
+  static SLIDES = [{img:'burger-house.jpg',pos:'30% 50%',id:'b2'},{img:'tacos3.jpg',pos:'45% 40%',id:'t2'},{img:'combo.jpg',pos:'50% 60%',id:'c1'},{img:'tacos2.jpg',pos:'55% 45%',id:'t1'}];
   static POPULAR = [
     {id:'d1',feats:[N('Charcoal-grilled','A la brasa de carbón','A la brasa de carbó'),N('Melted cheese topping','Cobertura de queso fundido','Cobertura de formatge fos')]},
     {id:'p2',feats:[N('Stone-baked crust','Masa cocida en piedra','Massa cuita en pedra'),N('House yogurt sauce','Salsa de yogur de la casa','Salsa de iogurt de la casa')]},
@@ -926,16 +964,16 @@ class Component extends DCLogic {
     return e('div',{ref,style:{position:'absolute',inset:0,isolation:'isolate'}}, p.slides.map((s,i)=>e('div',{key:i,style:{position:'absolute',inset:0,overflow:'hidden'}}, e('div',{style:{position:'absolute',inset:0}}, s.video? e('video',{src:s.video,autoPlay:true,muted:true,loop:true,playsInline:true,style:{width:'100%',height:'100%',objectFit:'cover'}}) : e('div',{style:{position:'absolute',inset:0,backgroundImage:'url(assets/food/'+s.img+')',backgroundSize:'cover',backgroundPosition:s.pos,willChange:'transform',animation:'kfkb'+(i%3)+' 13s ease-in-out '+(-i*3)+'s infinite alternate'}}))))); }
   static SlideBg(p){ const e=React.createElement;
     return e('div',{style:{position:'absolute',inset:0,overflow:'hidden'}}, p.slides.map((s,i)=>e('div',{key:i,style:{position:'absolute',inset:0,transform:'translateX('+((i-p.idx)*100)+'%)',transition:p.motion===false?'none':'transform .65s cubic-bezier(.65,0,.35,1)',backgroundImage:'url(assets/food/'+s.img+')',backgroundSize:'cover',backgroundPosition:s.pos||'50% 50%'}}))); }
-  static HERO = {pizza:{img:'pizza.png',pos:'62% 60%',alt:'Pizza with melting cheese'},durum:{img:'durum.png',pos:'45% 55%',alt:'Gratinated dürüm'},burger:{img:'burger-house.png',pos:'28% 50%',alt:'Cheeseburger with fries'}};
+  static HERO = {pizza:{img:'pizza.jpg',pos:'62% 60%',alt:'Pizza with melting cheese'},durum:{img:'durum.jpg',pos:'45% 55%',alt:'Gratinated dürüm'},burger:{img:'burger-house.jpg',pos:'28% 50%',alt:'Cheeseburger with fries'}};
   static REVIEWS = [
     {name:'Marc Puig',stars:5,text:'El dürüm gratinat és espectacular. Ha arribat calent i en menys de 45 minuts.',itemId:'d1',photo:'reviewer-marc.jpg'},
     {name:'Sara López',stars:5,text:'Muy buena cantidad y bien de precio. La pizza kebab está buenísima.',itemId:'p2',photo:'reviewer-sara.jpg'},
     {name:'Laura Fernández',stars:5,text:'La doble smash burger está buenísima, se nota que la carne es de calidad. ¡Volveremos pronto!',itemId:'b2',photo:'reviewer-laura.jpg'}
   ];
   static JOURNEY = [
-    {x:75, y:10, side:'r', icon:'store', img:'durum.png', tIdx:0},
-    {x:25, y:38, side:'l', icon:'bike', img:'combo.png', tIdx:1},
-    {x:75, y:68, side:'r', icon:'starf', img:'wings.png', tIdx:2},
+    {x:75, y:10, side:'r', icon:'store', img:'durum.jpg', tIdx:0},
+    {x:25, y:38, side:'l', icon:'bike', img:'combo.jpg', tIdx:1},
+    {x:75, y:68, side:'r', icon:'starf', img:'wings.jpg', tIdx:2},
     {x:50, y:100, side:'c', icon:'flame', img:'tacos2.jpg', tIdx:3}
   ];
   static JOURNEY_AMBIENT = [
@@ -948,12 +986,12 @@ class Component extends DCLogic {
     {x:8, y:89, icon:'package'}
   ];
   static GALLERY = [
-    {img:'durum.png', itemId:'d1'},
-    {img:'pizza.png', itemId:'p1'},
-    {img:'burger-house.png', itemId:'b2'},
+    {img:'durum.jpg', itemId:'d1'},
+    {img:'pizza.jpg', itemId:'p1'},
+    {img:'burger-house.jpg', itemId:'b2'},
     {img:'tacos1.jpg', itemId:'t1'},
-    {img:'combo.png', itemId:'c1'},
-    {img:'wings.png', itemId:'c3'},
+    {img:'combo.jpg', itemId:'c1'},
+    {img:'wings.jpg', itemId:'c3'},
     {img:'salad.png', name:N('Fresh salad','Ensalada fresca','Amanida fresca')},
     {img:'plates.png', name:N('Our dishes','Nuestros platos','Els nostres plats')}
   ];
@@ -974,7 +1012,7 @@ class Component extends DCLogic {
 
   fresh(){
     const now=Date.now(), m=60000;
-    return { v:1, view:this.props.startView||'home', lang:'es', cat:[], homeCat:[], q:'', cart:{}, drawer:false, step:'cart', faqOpen:[0],
+    return { v:1, view:this.props.startView||'home', lang:'es', cat:[], homeCat:[], q:'', cart:{}, drawer:false, navMenu:false, step:'cart', faqOpen:[0],
       form:{name:'',email:'',phone:'',address:'',pay:'cash'}, errs:{}, confirm:null, ddOpen:false,
       heroIdx:0, combosIdx:0, eta:45, seq:1046, scrolled:false, navWide:(typeof window!=='undefined'&&window.innerWidth>=900),
       cats:Component.CATS.map(c=>({...c})), items:Component.ITEMS.map(i=>({...i})),
@@ -985,7 +1023,7 @@ class Component extends DCLogic {
         {id:'o1042',ref:'KF-1042',status:'delivered',at:now-80*m,done:now-41*m,eta:45,name:'Ahmed R.',email:'ahmed.r@gmail.com',phone:'+34 634 118 902',address:'Rambla de Sant Adrià 12, Sant Adrià de Besòs',pay:'cash',lines:[{qty:1,name:'Chicken Fried Taco'},{qty:1,name:'Ayran'}],total:9.5}
       ], now };
   }
-  state = (()=>{ const f=this.fresh(); try{ const s=JSON.parse(localStorage.getItem('kf4')||'null'); if(s&&s.v===1) return {...f,...s,cat:Array.isArray(s.cat)?s.cat:[],homeCat:Array.isArray(s.homeCat)?s.homeCat:[],drawer:false,ddOpen:false,confirm:null,now:Date.now()}; }catch(e){} return f; })();
+  state = (()=>{ const f=this.fresh(); try{ const s=JSON.parse(localStorage.getItem('kf4')||'null'); if(s&&s.v===1) return {...f,...s,cat:Array.isArray(s.cat)?s.cat:[],homeCat:Array.isArray(s.homeCat)?s.homeCat:[],drawer:false,navMenu:false,ddOpen:false,confirm:null,now:Date.now()}; }catch(e){} return f; })();
 
   componentDidMount(){
     this._revealed=new WeakSet();
@@ -1082,7 +1120,7 @@ class Component extends DCLogic {
   }
 
   fmt(n){ return (Math.round(n*100)/100).toFixed(2)+' €'; }
-  go(view,extra){ this._scrolled=false; this.setState({view,ddOpen:false,drawer:false,scrolled:false,...(extra||{})}); window.scrollTo({top:0,behavior:'instant'}); this.parallax(); }
+  go(view,extra){ this._scrolled=false; this.setState({view,ddOpen:false,drawer:false,navMenu:false,scrolled:false,...(extra||{})}); window.scrollTo({top:0,behavior:'instant'}); this.parallax(); }
   bump(){ const b=document.querySelector('[data-cartbtn]'); b&&b.animate([{transform:'scale(1)'},{transform:'scale(1.12)'},{transform:'scale(1)'}],{duration:300,easing:'ease-out'}); }
   sweep(b){ if(!b||b.dataset.noripple||this.props.motion===false) return; const t=Date.now(); if(b._w&&t-b._w<1500) return; b._w=t; const isCard=b.hasAttribute('data-wave'); const cs=getComputedStyle(b); if(cs.position==='static') b.style.position='relative'; b.style.overflow='hidden'; const m=(cs.backgroundColor.match(/[\d.]+/g)||[0,0,0,0]).map(Number), al=m.length>3?m[3]:1, lum=(.299*m[0]+.587*m[1]+.114*m[2])/255, light=al<.2||lum>.72; const w=document.createElement('span'); w.style.cssText=(isCard?'position:absolute;top:0;bottom:0;left:0;width:55%;':'position:absolute;top:-30%;bottom:-30%;left:0;width:90%;')+'pointer-events:none;background:linear-gradient(100deg,transparent 0%,'+(light?(isCard?'rgba(255,77,28,.22)':'rgba(255,77,28,.10)'):'rgba(255,255,255,.22)')+' 50%,transparent 100%);transform:translateX(-130%) skewX(-20deg)'; b.appendChild(w); w.animate([{transform:'translateX(-130%) skewX(-20deg)'},{transform:'translateX(230%) skewX(-20deg)'}],{duration:isCard?1300:1100,easing:'cubic-bezier(.4,0,.2,1)'}).onfinish=()=>w.remove(); }
   add(id){ this.setState(s=>({cart:{...s.cart,[id]:(s.cart[id]||0)+1}})); this.bump(); }
@@ -1128,6 +1166,7 @@ class Component extends DCLogic {
 
     const t={
       home:pick('Home','Inicio','Inici'), menuNav:pick('Menu','Menú','Menú'),
+      openNavMenu:pick('Open menu','Abrir menú','Obre el menú'), closeNavMenu:pick('Close menu','Cerrar menú','Tanca el menú'),
       openOrderAria:pick('Open your order','Ver tu pedido','Veure la teva comanda'),
       newBadge:pick('NEW','NUEVO','NOU'),
       newTacosBtn:pick('Fried Tacos are here','Ya tenemos Tacos Fritos','Ja tenim Tacos Fregits'),
@@ -1288,22 +1327,23 @@ class Component extends DCLogic {
     const SL=Component.SLIDES.map((x,i)=>({...x,video:vids[i]||''})), hi=(s.heroIdx||0)%SL.length, curS=SL[hi], curIt=s.items.find(i=>i.id===curS.id);
 
     const langDefs=[['es','ES'],['ca','CA'],['en','EN']];
-    const langs=langDefs.map(([id,code])=>{ const on=lang===id; return {code,pressed:String(on),bg:on?'#FF4D1C':'transparent',fg:on?'#FFF8F2':(navOverlay?'#ffffff':'#2C1D12'),go:()=>this.setLang(id)}; });
+    const langs=langDefs.map(([id,code])=>{ const on=lang===id; return {code,pressed:String(on),bg:on?'#FF4D1C':'transparent',fg:on?'#FFF8F2':(navOverlay?'#ffffff':'#2C1D12'),navBg:on?'#FF4D1C':'transparent',navFg:on?'#ffffff':'#2C1D12',go:()=>this.setLang(id)}; });
 
     return {
       isHome:view==='home', isMenu:view==='menu', isSite:true, eta, t, langs,
-      navOverlay, navWrapCls:view==='home'?'kf-nav-overlay':'',
+      navOverlay, navWrapCls:(view==='home'?'kf-nav-overlay':'')+(navOverlay?' kf-nav-transparent':''),
       utilBarBg:navOverlay?'transparent':'#2C1D12', utilBarColor:navOverlay?'#FFEEE3':'#D9C6B4',
       headerBg:navOverlay?'transparent':'rgba(255,248,242,.97)',
       navTextColor:navOverlay?'#ffffff':'#2C1D12', navMuted:navOverlay?'rgba(255,255,255,.75)':'#8A7160',
       navBorder:navOverlay?'rgba(255,255,255,.4)':'#FCE0CC',
       navSocialBg:navOverlay?'rgba(255,255,255,.16)':'rgba(255,255,255,.08)',
       headerBlur:navOverlay?'none':'blur(14px)',
-      navHoverBg:navOverlay?'rgba(255,255,255,.18)':'#FFEEE3',
       nav:{home:()=>this.go('home'),menu:()=>this.go('menu'),homeBg:view==='home'&&!navOverlay?'#FFEEE3':'transparent',menuBg:view==='menu'&&!navOverlay?'#FFEEE3':'transparent'},
       goCombos:()=>{ const el=document.getElementById('combos'); if(el) window.scrollTo({top:el.getBoundingClientRect().top+scrollY-90,behavior:'smooth'}); },
       cartCount:String(count), cartTotal:this.fmt(total), hasCart:count>0,
       openCart:()=>this.setState({drawer:true,step:'cart'}),
+      navMenuOpen:s.navMenu,toggleNavMenu:()=>this.setState(st=>({navMenu:!st.navMenu})),closeNavMenu:()=>this.setState({navMenu:false}),
+      navHomeCurrent:view==='home'?'page':'false',navMenuCurrent:view==='menu'?'page':'false',
       openToday,
       heroBg:React.createElement(Component.Slider,{slides:SL,idx:hi}),
       heroDots:SL.map((x,i)=>{ const it=s.items.find(q=>q.id===x.id); return {label:pick('Show ','Ver ','Mostra ')+(it?L(it.name):pick('slide ','diapositiva ','diapositiva ')+(i+1)),w:i===hi?'44px':'14px',bg:'rgba(255,255,255,.35)',anim:i===hi&&this.props.motion!==false?'kffill 5.5s linear forwards':'none',go:()=>{ this.setState({heroIdx:i}); this.restartSlides(); }}; }),
@@ -1322,7 +1362,6 @@ class Component extends DCLogic {
         const hxArr=[10,36.7,63.3,90], hyArr=[51.5,20,80,51.5], hDelays=[0,3.2,6.4,9.6];
         return {xPct:st.x,yPct:st.y,side:st.side,icon:st.icon,bg:'url(assets/food/'+st.img+')',d:String(i%4),pinBg:m?(st.tIdx%2?'#2E6B4C':'#FF4D1C'):'#ffffff',pinFg:m?'#fff':'#E63E00',hasYear:!!m,year:m?L(m.year):'',title:m?L(m.title):L(st.title),text:m?L(m.text):'',
         hxPct:hxArr[i],hyPct:hyArr[i],hSide:i%2===0?'top':'bottom',hDelay:hDelays[i]}; }),
-      journeyAmbient:Component.JOURNEY_AMBIENT,
       galleryItems:Component.GALLERY.map(g=>{ const it=g.itemId?s.items.find(x=>x.id===g.itemId):null; return {bg:'url(assets/food/'+g.img+')',name:it?L(it.name):L(g.name)}; }),
       faq:Component.FAQ.map((f,i)=>{ const faqOpen=s.faqOpen||[], open=faqOpen.includes(i); return {q:L(f.q),a:L(f.a),open:String(open),maxH:open?'400px':'0px',rot:open?'rotate(180deg)':'rotate(0deg)',d:String(i%4),
         toggle:()=>this.setState(st=>{ const cur=st.faqOpen||[]; const has=cur.includes(i); return {faqOpen:has?cur.filter(x=>x!==i):[...cur,i]}; })}; }),

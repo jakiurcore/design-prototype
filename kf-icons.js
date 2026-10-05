@@ -4,6 +4,7 @@ bag:'<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6
 plus:'<path d="M5 12h14"/><path d="M12 5v14"/>',
 minus:'<path d="M5 12h14"/>',
 x:'<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+menu:'<path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/>',
 check:'<path d="M20 6 9 17l-5-5"/>',
 star:'<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
 starf:'<polygon fill="currentColor" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
