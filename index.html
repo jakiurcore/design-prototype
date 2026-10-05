@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" as="image" href="assets/food/burger-house.jpg">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -1026,6 +1027,7 @@ class Component extends DCLogic {
   state = (()=>{ const f=this.fresh(); try{ const s=JSON.parse(localStorage.getItem('kf4')||'null'); if(s&&s.v===1) return {...f,...s,cat:Array.isArray(s.cat)?s.cat:[],homeCat:Array.isArray(s.homeCat)?s.homeCat:[],drawer:false,navMenu:false,ddOpen:false,confirm:null,now:Date.now()}; }catch(e){} return f; })();
 
   componentDidMount(){
+    document.documentElement.lang=this.state.lang;
     this._revealed=new WeakSet();
     this.onScroll=()=>{ const sc=scrollY>24, wide=innerWidth>=900; if(sc!==this._scrolled||wide!==this._wide){ this._scrolled=sc; this._wide=wide; this.setState({scrolled:sc,navWide:wide}); } if(this.raf) return; this.raf=requestAnimationFrame(()=>{ this.raf=0; this.parallax(); }); };
     window.addEventListener('scroll',this.onScroll,{passive:true}); window.addEventListener('resize',this.onScroll);
@@ -1144,7 +1146,7 @@ class Component extends DCLogic {
   }
   hm(t){ const d=new Date(t); return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'); }
   parsePrice(v){ const n=parseFloat(String(v).replace(',','.').replace(/[^\d.]/g,'')); return isFinite(n)?Math.round(n*100)/100:null; }
-  setLang(l){ this.setState({lang:l}); }
+  setLang(l){ this.setState({lang:l}); document.documentElement.lang=l; }
   pick(en,es,ca){ const l=this.state.lang||'es'; return l==='es'?es:l==='ca'?(ca!=null?ca:es):en; }
   L(o){ if(o==null) return o; if(typeof o!=='object') return o; const l=this.state.lang||'es'; return o[l]!=null?o[l]:o.en; }
   EN(o){ return (o&&typeof o==='object')?o.en:o; }
