@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - claude/friendly-einstein-qjd6vb
+      - claude/dreamy-curie-lgvxcf
   workflow_dispatch:
 
 permissions:
